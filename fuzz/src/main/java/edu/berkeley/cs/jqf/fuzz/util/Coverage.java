@@ -96,6 +96,10 @@ public class Coverage implements TraceEventVisitor, ICoverage<Counter> {
     @Override
     public void visitBranchEvent(BranchEvent b) {
         counter.increment1(b.getIid(), b.getArm());
+        //Print b
+        if (b.getIid() >= 0){
+            System.out.println("Event ID: " + b.getIid() + ", branch arm: " + b.getArm() + ".");
+        }
     }
 
     @Override
