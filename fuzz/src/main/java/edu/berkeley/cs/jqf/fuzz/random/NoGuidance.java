@@ -141,7 +141,7 @@ public class NoGuidance implements Guidance {
         //return getCoverage()::handleEvent;
         return (event) -> {
             if(event.getIid() >= 0){
-                System.out.println(String.format("Thread %s produced event &s", thread.getName(), event));
+                System.out.println(String.format("Thread %s produced event %s", thread.getName(), event));
             }
         };
     }
