@@ -138,7 +138,12 @@ public class NoGuidance implements Guidance {
      */
     @Override
     public Consumer<TraceEvent> generateCallBack(Thread thread) {
-        return getCoverage()::handleEvent;
+        //return getCoverage()::handleEvent;
+        return (event) -> {
+            if(event.getIid() >= 0){
+                System.out.println(String.format("Thread %s produced event &s", thread.getName(), event));
+            }
+        };
     }
 
     /**
